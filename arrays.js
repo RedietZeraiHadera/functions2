@@ -29,6 +29,7 @@ function calculateTotal() {
     const total = calculateTotal();
 console.log(`There is a total ${total} of stock `);
 
+//Write a function to find the item with the lowest stock quantity.
 function lowestStock() {
     let lowestStock = amount[0];
     let lowestStockIndex = 0;
