@@ -17,7 +17,9 @@ function addGrocery(newGrocery, quantity) {
     }
   }
   addGrocery("tomato paste", 50); 
+  console.log(groceries);
 //Write a function to update the stock quantity of an existing item.
+
 //Write a function to calculate the total number of items in the inventory.
 function calculateTotal() {
     let total = 0;
@@ -36,7 +38,6 @@ function lowestStock() {
     for (let i = 1; i < amount.length; i++) {
         if (amount[i] < lowestStock) {
             lowestStock = amount[i];
-            lowestStockIndex = i;
           }
         }
       
