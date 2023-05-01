@@ -20,7 +20,7 @@ const people = [
   const adults = old(people);
 console.log(adults);
 
-// rite a function that takes an array of objects, where each object represents 
+// write a function that takes an array of objects, where each object represents 
 //a product with a name, price, and category property. The function should return 
 //an object that groups the products by their categories, with the category names
 // as keys and the arrays of products as values.
@@ -30,19 +30,15 @@ const products = [
     { name: 'Headphones', price: 80, category: 'Electronics' },
     { name: 'Shoes', price: 60, category: 'Clothing' },
   ];
-  function nameProducts(products) {
-    const grouped= {};
-    for (let i = 0; i < products.length; i++) {
-      const category = products[i].category;
-      if (!grouped[category]) {
-        grouped[category] = [];
-      }
-      grouped[category].push(products[i]);
-    }
-    return grouped;
-  }
-  const grouped = nameProducts(products);
-console.log(grouped);
+ 
+function groupProductsByCategory(products) {
+  const categories = [...new Set(products.map((product) => product.category))];
+  const groupedProducts = {};
+  categories.forEach((category) => {
+    groupedProducts[category] = products.filter((product) => product.category === category);
+  });
+  return groupedProducts;
+}
 
 
 
